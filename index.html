@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>L'IA avec esprit critique</title>
+    <title>La disparition de la friction intellectuelle</title>
     <style>
         * {
             margin: 0;
@@ -12,10 +12,10 @@
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
             padding: 20px;
+            min-height: 100vh;
         }
         
         .container {
@@ -28,395 +28,379 @@
         }
         
         .header {
-            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             padding: 40px;
             text-align: center;
         }
         
-        h1 {
+        .header h1 {
             font-size: 2.5em;
-            margin-bottom: 10px;
-            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
         
-        .subtitle {
+        .header p {
             font-size: 1.2em;
             opacity: 0.95;
-            font-weight: 300;
         }
         
-        .central-concept {
-            background: #f8f9fa;
-            padding: 40px;
-            text-align: center;
-            border-bottom: 3px solid #e9ecef;
-        }
-        
-        .loop {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            margin: 30px 0;
-            flex-wrap: wrap;
-        }
-        
-        .loop-item {
-            background: white;
-            padding: 20px 30px;
-            border-radius: 50px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            font-weight: 600;
-            color: #2c3e50;
-            position: relative;
-            transition: transform 0.3s;
-        }
-        
-        .loop-item:hover {
-            transform: translateY(-5px);
-        }
-        
-        .arrow {
-            color: #667eea;
-            font-size: 1.5em;
-            font-weight: bold;
-        }
-        
-        .key-message {
-            background: #667eea;
-            color: white;
-            padding: 15px 30px;
-            border-radius: 50px;
-            display: inline-block;
-            margin-top: 20px;
-            font-size: 1.1em;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
-        }
-        
-        .grid {
+        .panels {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 0;
-        }
-        
-        .section {
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
             padding: 40px;
-            position: relative;
-        }
-        
-        .section h2 {
-            font-size: 1.5em;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5em;
-        }
-        
-        .danger {
-            background: #fff5f5;
-            border-left: 4px solid #e74c3c;
-        }
-        
-        .danger .icon {
-            background: #e74c3c;
-            color: white;
-        }
-        
-        .success {
-            background: #f0fdf4;
-            border-left: 4px solid #27ae60;
-        }
-        
-        .success .icon {
-            background: #27ae60;
-            color: white;
-        }
-        
-        .info {
-            background: #f0f9ff;
-            border-left: 4px solid #3498db;
-        }
-        
-        .info .icon {
-            background: #3498db;
-            color: white;
-        }
-        
-        .warning {
-            background: #fffbeb;
-            border-left: 4px solid #f39c12;
-        }
-        
-        .warning .icon {
-            background: #f39c12;
-            color: white;
-        }
-        
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        
-        li {
-            padding: 12px 0;
-            padding-left: 35px;
-            position: relative;
-            line-height: 1.6;
-        }
-        
-        li:before {
-            content: '';
-            position: absolute;
-            left: 10px;
-            top: 20px;
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: currentColor;
-            opacity: 0.5;
-        }
-        
-        .example {
-            background: white;
-            border-radius: 10px;
-            padding: 15px;
-            margin-top: 15px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        .example-label {
-            font-weight: 600;
-            color: #667eea;
-            font-size: 0.9em;
-            margin-bottom: 8px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        .example-text {
-            font-family: 'Courier New', monospace;
-            background: #f8f9fa;
-            padding: 10px;
-            border-radius: 5px;
-            border-left: 3px solid #667eea;
-        }
-        
-        .footer {
-            background: #2c3e50;
-            color: white;
-            padding: 30px;
-            text-align: center;
-        }
-        
-        .principle {
-            background: rgba(255,255,255,0.1);
-            padding: 20px;
-            border-radius: 10px;
-            font-size: 1.1em;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-        
-        .signature {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 15px;
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.2);
-            font-size: 0.95em;
-        }
-        
-        .cc-license {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(255,255,255,0.1);
-            padding: 8px 15px;
-            border-radius: 20px;
-        }
-        
-        .cc-license svg {
-            height: 20px;
-            width: auto;
-            fill: white;
         }
         
         @media (max-width: 768px) {
-            h1 {
-                font-size: 1.8em;
-            }
-            
-            .loop {
-                flex-direction: column;
-            }
-            
-            .arrow {
-                transform: rotate(90deg);
-            }
-            
-            .signature {
-                flex-direction: column;
-                gap: 10px;
+            .panels {
+                grid-template-columns: 1fr;
             }
         }
         
-        .pulse {
+        .panel {
+            border: 3px solid #f0f0f0;
+            border-radius: 15px;
+            padding: 30px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .panel:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+        }
+        
+        .panel-number {
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            background: #667eea;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+        
+        .panel h2 {
+            color: #333;
+            margin-bottom: 20px;
+            padding-top: 10px;
+        }
+        
+        .brain-gym {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 20px 0;
+        }
+        
+        .brain {
+            font-size: 4em;
             animation: pulse 2s infinite;
         }
         
         @keyframes pulse {
-            0% {
-                box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
-            }
-            50% {
-                box-shadow: 0 4px 25px rgba(102, 126, 234, 0.5);
-            }
-            100% {
-                box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
-            }
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        .weight {
+            font-size: 3em;
+        }
+        
+        .treadmill {
+            font-size: 3em;
+            animation: slide 2s ease-in-out infinite;
+        }
+        
+        @keyframes slide {
+            0% { transform: translateX(0); }
+            50% { transform: translateX(10px); }
+            100% { transform: translateX(0); }
+        }
+        
+        .example-box {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        .before {
+            color: #d63384;
+            font-weight: bold;
+        }
+        
+        .after {
+            color: #20c997;
+            font-weight: bold;
+        }
+        
+        .time-indicator {
+            display: inline-block;
+            background: #ffc107;
+            color: #333;
+            padding: 5px 10px;
+            border-radius: 20px;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+        
+        .paths {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+        }
+        
+        .path {
+            flex: 1;
+            padding: 15px;
+            margin: 5px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .path-easy {
+            background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+        }
+        
+        .path-hard {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+        }
+        
+        .balance {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px 0;
+        }
+        
+        .balance-side {
+            flex: 1;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .balance-heavy {
+            background: #e8f5e9;
+            transform: translateY(10px);
+        }
+        
+        .balance-light {
+            background: #fff3e0;
+            border: 2px dashed #ff9800;
+        }
+        
+        .stat-box {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .stat-number {
+            font-size: 3em;
+            color: #1976d2;
+            font-weight: bold;
+        }
+        
+        .analogies {
+            background: #f5f5f5;
+            padding: 30px;
+            margin-top: 40px;
+        }
+        
+        .analogies h3 {
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .analogy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .analogy-card {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .icon {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        
+        .footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .footer a {
+            color: #84fab0;
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        
+        .highlight {
+            background: linear-gradient(180deg, transparent 60%, #ffd93d 60%);
+            padding: 2px 5px;
+        }
+        
+        .sparkle {
+            color: #ffd700;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>🧠 Utiliser l'IA avec Esprit Critique</h1>
-            <div class="subtitle">Comment transformer ChatGPT en véritable outil de réflexion</div>
+            <h1>🧠 La disparition de la friction intellectuelle</h1>
+            <p>Quand l'IA transforme ta façon de penser sans que tu t'en rendes compte</p>
         </div>
         
-        <div class="central-concept">
-            <h2 style="color: #2c3e50; margin-bottom: 10px;">💡 Le concept clé à comprendre</h2>
-            <p style="font-size: 1.1em; color: #555; margin-bottom: 20px;">
-                L'IA ne "pense" pas, elle prédit le mot suivant le plus probable selon ta question
-            </p>
-            
-            <div class="loop">
-                <div class="loop-item">Ta Question</div>
-                <div class="arrow">→</div>
-                <div class="loop-item">Contexte créé</div>
-                <div class="arrow">→</div>
-                <div class="loop-item">Réponse prédite</div>
-                <div class="arrow">→</div>
-                <div class="loop-item">Ta Question</div>
+        <div class="panels">
+            <div class="panel">
+                <div class="panel-number">1</div>
+                <h2>💪 Avant : le gymnase mental</h2>
+                <div class="brain-gym">
+                    <span class="brain">🧠</span>
+                    <span class="weight">🏋️</span>
+                </div>
+                <p><strong>Poser une question difficile = muscler ta pensée</strong></p>
+                
+                <div class="example-box">
+                    <p class="before">Ta question floue mais riche :</p>
+                    <p>"Pourquoi j'aime pas l'école ?"</p>
+                    <div class="time-indicator">⏱️ 3 semaines d'exploration</div>
+                    <p><strong>Résultat :</strong> Tu découvres un problème d'apprentissage spécifique, tu trouves des solutions adaptées à <span class="highlight">TON</span> cas.</p>
+                </div>
+                
+                <p>Les étudiant·e·s prenaient le temps de <strong>lutter</strong> avec leurs questions, de les reformuler, de se tromper, de recommencer...</p>
             </div>
             
-            <div class="key-message pulse">
-                ⚡ Tu es co-auteur·ice de chaque réponse de l'IA
+            <div class="panel">
+                <div class="panel-number">2</div>
+                <h2>🤖 Maintenant : le tapis roulant automatique</h2>
+                <div class="brain-gym">
+                    <span class="brain">🧠</span>
+                    <span class="treadmill">🏃‍♀️</span>
+                </div>
+                <p><strong>L'IA préfère les questions prêtes-à-répondre</strong></p>
+                
+                <div class="example-box">
+                    <p class="after">Ta question transformée pour l'IA :</p>
+                    <p>"Méthodes pour améliorer motivation scolaire"</p>
+                    <div class="time-indicator">⚡ 30 secondes</div>
+                    <p><strong>Résultat :</strong> Liste générique, rien de personnel, copier-coller d'infos standards.</p>
+                </div>
+                
+                <p>Les apprenant·e·s évitent maintenant les questions complexes car elles "marchent mal" avec ChatGPT...</p>
+            </div>
+            
+            <div class="panel">
+                <div class="panel-number">3</div>
+                <h2>🚧 Le piège invisible</h2>
+                
+                <div class="stat-box">
+                    <div class="stat-number">87%</div>
+                    <p>des étudiant·e·s évitent maintenant les questions<br>qui fonctionnent mal avec l'IA</p>
+                </div>
+                
+                <div class="paths">
+                    <div class="path path-easy">
+                        <h3>🛣️ Chemin A</h3>
+                        <p><strong>Large et éclairé</strong></p>
+                        <p>Questions que l'IA comprend bien</p>
+                        <p>🧠➡️🐜</p>
+                        <p>Ton cerveau rétrécit</p>
+                    </div>
+                    <div class="path path-hard">
+                        <h3>🌲 Chemin B</h3>
+                        <p><strong>Étroit et sombre</strong></p>
+                        <p>Questions compliquées</p>
+                        <p>🚫 "Fermé pour maintenance"</p>
+                        <p>Plus personne ne passe</p>
+                    </div>
+                </div>
+                
+                <p>Sans t'en rendre compte, tu commences à <span class="highlight">penser en fonction de ce que l'IA peut répondre</span>, pas de ce que tu veux vraiment savoir.</p>
+            </div>
+            
+            <div class="panel">
+                <div class="panel-number">4</div>
+                <h2>⚖️ Ce que tu perds</h2>
+                
+                <div class="balance">
+                    <div class="balance-side balance-heavy">
+                        <h3>📦 Côté lourd</h3>
+                        <p>✓ Vitesse</p>
+                        <p>✓ Quantité</p>
+                        <p>✓ Confort</p>
+                    </div>
+                    <div class="balance-side balance-light">
+                        <h3 class="sparkle">✨ Côté précieux</h3>
+                        <p>💡 Créativité</p>
+                        <p>🔍 Découvertes inattendues</p>
+                        <p>🎯 Compréhension profonde</p>
+                        <p>🌟 Pensée personnelle</p>
+                    </div>
+                </div>
+                
+                <p><strong>L'analogie parfaite :</strong></p>
+                <p>"C'est comme prendre l'ascenseur au lieu des escaliers. Pratique sur le moment, mais tes jambes s'affaiblissent progressivement."</p>
             </div>
         </div>
         
-        <div class="grid">
-            <div class="section danger">
-                <h2>
-                    <span class="icon">⚠️</span>
-                    Les pièges à éviter
-                </h2>
-                <ul>
-                    <li><strong>L'effet miroir :</strong> L'IA copie ton style et confirme tes idées</li>
-                    <li><strong>La complaisance :</strong> Elle cherche à te satisfaire plutôt qu'à être exacte</li>
-                    <li><strong>La bulle :</strong> Tu dialogues avec tes propres idées reformulées</li>
-                </ul>
-                
-                <div class="example">
-                    <div class="example-label">Piège typique</div>
-                    <div class="example-text">
-                        ❌ "J'ai raison de penser que X est vrai, non ?"<br>
-                        → L'IA va probablement confirmer
-                    </div>
+        <div class="analogies">
+            <h3>🔄 D'autres exemples du quotidien pour comprendre</h3>
+            <div class="analogy-grid">
+                <div class="analogy-card">
+                    <div class="icon">🗺️</div>
+                    <p><strong>GPS vs carte</strong></p>
+                    <p>Tu sais arriver, mais tu ne connais plus ta ville</p>
                 </div>
-            </div>
-            
-            <div class="section success">
-                <h2>
-                    <span class="icon">✨</span>
-                    Techniques pour mieux réfléchir
-                </h2>
-                <ul>
-                    <li><strong>Demander plusieurs angles :</strong> "Donne-moi 3 façons différentes de voir ce problème"</li>
-                    <li><strong>Chercher les failles :</strong> "Où mon raisonnement pourrait être trop simple ?"</li>
-                    <li><strong>Inverser les rôles :</strong> "Quelles questions devrais-je me poser sur ce sujet ?"</li>
-                </ul>
-                
-                <div class="example">
-                    <div class="example-label">Bonne pratique</div>
-                    <div class="example-text">
-                        ✅ "Argumente CONTRE cette idée : [ton idée]"<br>
-                        → Force l'IA à te challenger
-                    </div>
+                <div class="analogy-card">
+                    <div class="icon">🧮</div>
+                    <p><strong>Calculatrice vs mental</strong></p>
+                    <p>Tu calcules vite, mais 7×8 devient difficile</p>
                 </div>
-            </div>
-            
-            <div class="section info">
-                <h2>
-                    <span class="icon">🎯</span>
-                    Comment formuler tes demandes
-                </h2>
-                <ul>
-                    <li><strong>Sois précis·e :</strong> Chaque mot oriente la réponse</li>
-                    <li><strong>Impose des contraintes :</strong> "Explique comme à un·e enfant" ou "En 3 points maximum"</li>
-                    <li><strong>Varie les approches :</strong> Reformule différemment pour explorer</li>
-                </ul>
-                
-                <div class="example">
-                    <div class="example-label">Transformation utile</div>
-                    <div class="example-text">
-                        Au lieu de : "C'est quoi le marketing ?"<br>
-                        Essaie : "Compare 3 définitions contradictoires du marketing"
-                    </div>
-                </div>
-            </div>
-            
-            <div class="section warning">
-                <h2>
-                    <span class="icon">🔄</span>
-                    Créer de la friction cognitive
-                </h2>
-                <ul>
-                    <li><strong>Force la contradiction :</strong> Demande toujours un contre-argument</li>
-                    <li><strong>Multiplie les perspectives :</strong> "Comment un·e économiste, un·e philosophe et un·e ingénieur·e verraient ce problème ?"</li>
-                    <li><strong>Teste la robustesse :</strong> "Quelle est la plus grosse faiblesse de cette approche ?"</li>
-                </ul>
-                
-                <div class="example">
-                    <div class="example-label">Question puissante</div>
-                    <div class="example-text">
-                        💪 "Si tu devais me convaincre du contraire, quels seraient tes 3 meilleurs arguments ?"
-                    </div>
+                <div class="analogy-card">
+                    <div class="icon">📝</div>
+                    <p><strong>Correcteur vs orthographe</strong></p>
+                    <p>Zéro faute à l'écran, mais tu doutes sur papier</p>
                 </div>
             </div>
         </div>
         
         <div class="footer">
-            <div class="principle">
-                <strong>🎓 Principe fondamental :</strong><br>
-                La qualité de la réponse ne dépend pas de l'intelligence de l'IA,<br>
-                mais de ta capacité à structurer des questions qui génèrent de la réflexion critique.
-            </div>
-            
-            <div class="signature">
-                <span><strong>Rochane Kherbouche</strong></span>
-                <div class="cc-license">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-                        <circle cx="32" cy="32" r="30" fill="none" stroke="white" stroke-width="4"/>
-                        <path d="M32 15c-9.4 0-17 7.6-17 17s7.6 17 17 17c4.5 0 8.6-1.7 11.7-4.6l-4.2-3.7c-2.1 1.8-4.7 2.8-7.5 2.8-6.4 0-11.5-5.2-11.5-11.5S25.6 20.5 32 20.5c2.8 0 5.4 1 7.5 2.8l4.2-3.7C40.6 16.7 36.5 15 32 15z"/>
-                        <path d="M41 27c-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4zm0 5.5c-0.8 0-1.5-0.7-1.5-1.5s0.7-1.5 1.5-1.5 1.5 0.7 1.5 1.5-0.7 1.5-1.5 1.5z"/>
-                    </svg>
-                    <span>CC BY-SA</span>
-                </div>
-            </div>
+            <p>💡 <strong>Rappelle-toi :</strong> L'IA est un outil formidable, mais ne la laisse pas décider quelles questions méritent d'être posées.</p>
+            <p>Les meilleures découvertes viennent souvent des questions les plus floues, celles qui demandent du temps, de la patience et... de la friction !</p>
+            <br>
+            <p>📚 Inspiré de l'article : <a href="https://www.unesco.org/en/articles/disappearance-unclear-question" target="_blank">"The Disappearance of the Unclear Question" (UNESCO)</a></p>
+            <p>🎨 Infographie créée par Rochane Kherbouche | CC BY-SA</p>
         </div>
     </div>
 </body>
